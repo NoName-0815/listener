@@ -21,7 +21,7 @@ It's as simple as cloning the repo, changing into it and running the python prog
 ```bash
 git clone https://github.com/NoName-0815/listener.git
 cd listener
-python3 listener.py
+python3 listener.py -g <github_handle> -p <port>
 ```
 The listener.py program has to parameters: 
 1. A github handle: This handle is being used to notify its owner about the issue that's being created when the protection has been set.
