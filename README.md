@@ -14,34 +14,31 @@ For the listener to work correctly, it is necessary that these requisites are me
 
 The listener.py can run on any system with python3 available. It will need to install a few python packages. If these are not part of your system anyway, pip can install them in a virtual python environment, but that's not covered in this document
 
-### Setting it up
+### Setting it up and running it
 
 It's as simple as cloning the repo, changing into it and running the python program:
+
 ```bash
 git clone https://github.com/NoName-0815/listener.git
 cd listener
 python3 listener.py
 ```
-
-The listener has port 5000 hardcoded, so if you're behind a firewall, make sure to open that port for TCP towards you're running the listener on.
+The listener.py program has to parameters: 
+1. A github handle: This handle is being used to notify its owner about the issue that's being created when the protection has been set.
+2. A port: This is the tcp port at which listener.py will wait for webhooks.
 
 ### Configuring github to send webhooks to your listener
 
 Follow github's guide to set up webhooks on an organizational level and make sure you have either all of them, or at least the ones for repo creation enabled. 
 Set the *Payload URL* to the hostname or IP you're running the listener on, similar to this:
 
-`http://<hostname or IP>:5000/hooks`
+`http://<hostname or IP>:<port>/hooks`
 
 The *hooks* part at the end is important, it's the path to our application. 
 
 ### Using it
 
 With the above steps done, the listener's setup is complete and it will now set the number of reviewers required for a PR to 2 on every newly created main branch as well as it will require the code owner's review for a PR. 
-Every time the listener does this, it will also create a new issue in the repo's main branch, informing @mkarg75 about the performed actions. 
+Every time the listener does this, it will also create a new issue in the repo's main branch, informing the owner of the used github handle about the performed actions. 
 
-
-
-## Running it in a container
-
-There's also a container image available at <quay.bla.org>
 
