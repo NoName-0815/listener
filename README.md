@@ -23,7 +23,7 @@ git clone https://github.com/NoName-0815/listener.git
 cd listener
 python3 listener.py -g <github_handle> -p <port>
 ```
-The listener.py program has to parameters: 
+The listener.py program has two parameters: 
 1. A github handle: This handle is being used to notify its owner about the issue that's being created when the protection has been set.
 2. A port: This is the tcp port at which listener.py will wait for webhooks.
 
