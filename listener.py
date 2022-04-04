@@ -11,7 +11,7 @@ github_token = os.environ["GITHUB_TOKEN"]
 
 # Flask module settings
 app = Flask(__name__)  # Standard Flask app
-webhook = Webhook(app)  # Defines '/postreceive' endpoint
+webhook = Webhook(app)  # Defines endpoint
 
 def main(argv):
     port = ''
