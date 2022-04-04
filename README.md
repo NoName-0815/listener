@@ -1,8 +1,10 @@
 # webhook listener
 
-This repo is the home of listener.py. A program that, once started, will listen for 'create' webhooks for new repositories
-These webhooks can be coming from github and will, after receiving one of these webhooks, set up protection on the main branch of the new created repo. 
+This repo is the home of listener.py. A program that, once started, will listen for 'create' webhooks for new repositories.
+
+These webhooks are sent from Github and will cause listener.py to set up protection on the main branch of the newly created repo. 
 The idea is to have a default minimum set of reviewers for pull requests as well as the review of the code owner.
+The minimum is set to 2 reviewers for now. Since this is a hard requirement, it's hard-coded and can't be changed in order to ensure policy enforcement. 
 
 ## PreRequisites
 
@@ -10,6 +12,9 @@ For the listener to work correctly, it is necessary that these requisites are me
 1. The new repo must be derived from the template repo (so that it automatically creates the main branch with the README.md in it)
 2. The new repo must be public (this is just a limitation for free accounts on github, for enterprise accounts this is not true)
 3. A valid github token that grants access to the organization you're working on (https://github.com/settings/tokens)
+
+All 3 requirements are set up for the NoName-0815 organization which can act as an example. 
+
 
 ## Installation 
 
