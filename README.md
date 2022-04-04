@@ -1,6 +1,6 @@
 # webhook listener
 
-This repo is the home of a program that will, once started, listen for 'create' webhooks for new repositories
+This repo is the home of listener.py. A program that, once started, will listen for 'create' webhooks for new repositories
 These webhooks can be coming from github and will, after receiving one of these webhooks, set up protection on the main branch of the new created repo. 
 The idea is to have a default minimum set of reviewers for pull requests as well as the review of the code owner.
 
